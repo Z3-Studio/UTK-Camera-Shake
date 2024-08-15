@@ -3,6 +3,7 @@ using UnityEditor;
 using UnityEngine.UIElements;
 using Cinemachine;
 using Z3.UIBuilder.Editor;
+using Z3.Utils;
 
 namespace Z3.CameraShake.Editor
 {
@@ -12,7 +13,7 @@ namespace Z3.CameraShake.Editor
     [CustomEditor(typeof(ShakeData))]
     public class ShakeDataEditor : Z3Editor<ShakeData>
     {
-        [MenuItem("Assets/Create/Z3/Shake Data", false, 0)]
+        [MenuItem(Z3Path.MenuItemCreate + "Shake Data", false, 0)]
         public static void CreateColorGradient(MenuCommand _)
         {
             // Create assets

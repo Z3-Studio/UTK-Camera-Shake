@@ -3,8 +3,9 @@
     "rootNamespace": "Z3.CameraShake.Editor",
     "references": [
         "GUID:4307f53044263cf4b835bd812fc161a4",
-        "GUID:071a78640c2055e4fa01a41a28cd6d5f",
-        "GUID:9db0baad62b458342923bdaf951c3d5e"
+        "GUID:9db0baad62b458342923bdaf951c3d5e",
+        "GUID:9c94cf3ae2c3f0f40bd86a2d1066d5f9",
+        "GUID:071a78640c2055e4fa01a41a28cd6d5f"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
