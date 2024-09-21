@@ -1,7 +1,7 @@
-﻿using Cinemachine;
+﻿using Unity.Cinemachine;
 using System.Linq;
 using UnityEngine;
-using static Cinemachine.NoiseSettings;
+using static Unity.Cinemachine.NoiseSettings;
 
 namespace Z3.CameraShake
 {

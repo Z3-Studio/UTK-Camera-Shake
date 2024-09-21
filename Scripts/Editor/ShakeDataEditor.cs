@@ -1,7 +1,7 @@
 using System.Reflection;
 using UnityEditor;
 using UnityEngine.UIElements;
-using Cinemachine;
+using Unity.Cinemachine;
 using Z3.UIBuilder.Editor;
 using Z3.Utils;
 

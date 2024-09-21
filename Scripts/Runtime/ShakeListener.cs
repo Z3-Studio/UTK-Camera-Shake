@@ -1,6 +1,5 @@
-﻿using Cinemachine;
+﻿using Unity.Cinemachine;
 using UnityEngine;
-using Z3.UIBuilder.Core;
 
 namespace Z3.CameraShake
 {
@@ -9,25 +8,17 @@ namespace Z3.CameraShake
     /// </summary>
     public class ShakeListener : MonoBehaviour
     {
-        [Title("Shake Listenet")]
-        [SerializeField] private CinemachineVirtualCamera cinemachine;
-
-        private CinemachineBasicMultiChannelPerlin basic;
+        [SerializeField] private CinemachineBasicMultiChannelPerlin basicMultiChannelPerlin;
 
         private void Reset()
         {
-            if (cinemachine == null)
-                TryGetComponent(out cinemachine);
-        }
-
-        private void Awake()
-        {
-            basic = cinemachine.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+            if (!basicMultiChannelPerlin)
+                TryGetComponent(out basicMultiChannelPerlin);
         }
 
         private void OnEnable()
         {
-            basic.m_NoiseProfile = null;
+            basicMultiChannelPerlin.NoiseProfile = null;
             Shaker.OnUpdateShake += OnUpdateShake;
         }
 
@@ -40,15 +31,15 @@ namespace Z3.CameraShake
         {
             if (Shaker.ShakeActive)
             {
-                basic.m_NoiseProfile = result;
-                basic.m_AmplitudeGain = result.power;
-                basic.m_FrequencyGain = result.power;
+                basicMultiChannelPerlin.NoiseProfile = result;
+                basicMultiChannelPerlin.AmplitudeGain = result.power;
+                basicMultiChannelPerlin.FrequencyGain = result.power;
             }
             else
             {
-                basic.m_NoiseProfile = null;
-                basic.m_AmplitudeGain = 0f;
-                basic.m_FrequencyGain = 0f;
+                basicMultiChannelPerlin.NoiseProfile = null;
+                basicMultiChannelPerlin.AmplitudeGain = 0f;
+                basicMultiChannelPerlin.FrequencyGain = 0f;
             }
         }
     }
