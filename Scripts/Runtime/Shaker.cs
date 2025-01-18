@@ -7,7 +7,7 @@ namespace Z3.CameraShake
     /// <summary>
     /// Receive the shake parameters and send them to the listeners
     /// </summary>
-    public class Shaker : Monostate<Shaker>
+    public class Shaker : Singleton<Shaker>
     {
         public static event Action<ShakeResult> OnUpdateShake;
         public static bool ShakeActive { get; private set; } = true;
