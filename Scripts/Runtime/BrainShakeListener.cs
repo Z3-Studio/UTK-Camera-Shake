@@ -66,9 +66,16 @@ namespace Z3.CameraShake
         {
             CinemachineCamera vcam = camera as CinemachineCamera;
             if (vcam == null)
-                return;
+                return;            
 
-            currentPerlin = vcam.GetCinemachineComponent(CinemachineCore.Stage.Noise) as CinemachineBasicMultiChannelPerlin;
+            if (!vcam.gameObject.TryGetComponent(out CinemachineShakeListener _)) // Maybe cache it
+            {
+                currentPerlin = vcam.GetCinemachineComponent(CinemachineCore.Stage.Noise) as CinemachineBasicMultiChannelPerlin;
+            }
+            else
+            {
+                currentPerlin = null;
+            }
         }
 
         private void ClearPerlin()
